@@ -1,13 +1,265 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Rocha Robots</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#0f172a;
+color:white;
+}
+
+/* MENU */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+background:#020617;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+z-index:1000;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+color:#38bdf8;
+}
+
+nav a{
+color:white;
+margin-left:20px;
+text-decoration:none;
+font-size:15px;
+}
+
+nav a:hover{
+color:#38bdf8;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(120deg,#020617,#1e293b);
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:18px;
+max-width:600px;
+}
+
+.hero button{
+margin-top:25px;
+padding:12px 28px;
+border:none;
+background:#38bdf8;
+color:#000;
+font-size:16px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.hero button:hover{
+background:#0ea5e9;
+}
+
+/* SERVIÇOS */
+
+.services{
+padding:80px 40px;
+text-align:center;
+}
+
+.services h2{
+font-size:36px;
+margin-bottom:40px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:#1e293b;
+padding:30px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+background:#334155;
+}
+
+/* SOBRE */
+
+.about{
+padding:80px 40px;
+background:#020617;
+text-align:center;
+}
+
+.about p{
+max-width:700px;
+margin:auto;
+}
+
+/* CONTATO */
+
+.contact{
+padding:80px 40px;
+text-align:center;
+}
+
+input,textarea{
+width:80%;
+max-width:500px;
+padding:12px;
+margin:10px;
+border:none;
+border-radius:6px;
+}
+
+button.send{
+background:#38bdf8;
+padding:12px 30px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+background:#020617;
+text-align:center;
+padding:20px;
+font-size:14px;
+color:#94a3b8;
+}
+
+</style>
 </head>
 
 <body>
 
-<h1>Bem vindo ao Rocha Robots</h1>
-<p>Site funcionando.</p>
+<header>
+<div class="logo">Rocha Robots</div>
+
+<nav>
+<a href="#">Inicio</a>
+<a href="#services">Serviços</a>
+<a href="#about">Sobre</a>
+<a href="#contact">Contato</a>
+</nav>
+</header>
+
+<section class="hero">
+
+<h1>Automação e Tecnologia Inteligente</h1>
+
+<p>
+Soluções em automação, sistemas inteligentes e desenvolvimento
+digital para empresas modernas.
+</p>
+
+<button onclick="scrollToServices()">Conheça nossos serviços</button>
+
+</section>
+
+<section id="services" class="services">
+
+<h2>Nossos Serviços</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Automação</h3>
+<p>Sistemas automatizados para empresas e negócios digitais.</p>
+</div>
+
+<div class="card">
+<h3>Desenvolvimento Web</h3>
+<p>Criação de sites e sistemas modernos.</p>
+</div>
+
+<div class="card">
+<h3>Integração de IA</h3>
+<p>Chatbots e automações com inteligência artificial.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="about" class="about">
+
+<h2>Sobre nós</h2>
+
+<p>
+A Rocha Robots desenvolve soluções tecnológicas modernas para
+automatizar processos e aumentar a eficiência de empresas.
+</p>
+
+</section>
+
+<section id="contact" class="contact">
+
+<h2>Contato</h2>
+
+<input placeholder="Seu nome">
+
+<br>
+
+<input placeholder="Seu email">
+
+<br>
+
+<textarea placeholder="Mensagem"></textarea>
+
+<br>
+
+<button class="send">Enviar</button>
+
+</section>
+
+<footer>
+
+© 2026 Rocha Robots - Todos os direitos reservados
+
+</footer>
+
+<script>
+
+function scrollToServices(){
+document.getElementById("services").scrollIntoView({
+behavior:"smooth"
+});
+}
+
+</script>
 
 </body>
 </html>
