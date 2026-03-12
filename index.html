@@ -3,48 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rocha Robots | Automação & IA</title>
 
-<title>Rocha Robots</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#0f172a;
-color:white;
+:root{
+--bg:#0b0f1a;
+--card:#111827;
+--primary:#38bdf8;
+--accent:#22c55e;
+--text:#e5e7eb;
+--muted:#9ca3af;
 }
 
-/* MENU */
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Inter, sans-serif;
+background:linear-gradient(160deg,#020617,#0f172a);
+color:var(--text);
+}
+
+/* NAV */
 
 header{
 position:fixed;
-top:0;
 width:100%;
-background:#020617;
+top:0;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 40px;
-z-index:1000;
+padding:18px 40px;
+background:rgba(2,6,23,0.7);
+backdrop-filter:blur(10px);
+z-index:999;
 }
 
 .logo{
-font-size:22px;
-font-weight:bold;
-color:#38bdf8;
+font-size:20px;
+font-weight:700;
+color:var(--primary);
 }
 
 nav a{
-color:white;
-margin-left:20px;
+color:var(--text);
+margin-left:25px;
 text-decoration:none;
-font-size:15px;
+font-size:14px;
 }
 
-nav a:hover{
-color:#38bdf8;
-}
+nav a:hover{color:var(--primary);}
 
 /* HERO */
 
@@ -55,109 +65,130 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:linear-gradient(120deg,#020617,#1e293b);
+padding:20px;
 }
 
 .hero h1{
-font-size:48px;
+font-size:52px;
+max-width:800px;
 margin-bottom:20px;
 }
 
+.hero span{
+background:linear-gradient(90deg,#38bdf8,#22c55e);
+-webkit-background-clip:text;
+color:transparent;
+}
+
 .hero p{
-font-size:18px;
 max-width:600px;
+color:var(--muted);
 }
 
-.hero button{
-margin-top:25px;
-padding:12px 28px;
+.cta{
+margin-top:30px;
+}
+
+.btn{
+padding:14px 30px;
 border:none;
-background:#38bdf8;
-color:#000;
-font-size:16px;
-border-radius:8px;
+border-radius:10px;
+margin:8px;
 cursor:pointer;
+font-weight:600;
 }
 
-.hero button:hover{
-background:#0ea5e9;
+.primary{
+background:var(--primary);
+color:#000;
 }
 
-/* SERVIÇOS */
+.secondary{
+background:transparent;
+border:1px solid var(--primary);
+color:var(--primary);
+}
 
-.services{
+/* FEATURES */
+
+.features{
 padding:80px 40px;
 text-align:center;
 }
 
-.services h2{
+.features h2{
 font-size:36px;
 margin-bottom:40px;
 }
 
-.cards{
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:30px;
 }
 
 .card{
-background:#1e293b;
+background:var(--card);
 padding:30px;
-border-radius:12px;
+border-radius:14px;
 transition:0.3s;
+border:1px solid #1f2937;
 }
 
 .card:hover{
 transform:translateY(-10px);
-background:#334155;
+border-color:var(--primary);
 }
 
-/* SOBRE */
+/* CTA SECTION */
 
-.about{
-padding:80px 40px;
-background:#020617;
+.cta-section{
+padding:80px 20px;
 text-align:center;
+background:linear-gradient(140deg,#020617,#0f172a);
 }
 
-.about p{
-max-width:700px;
-margin:auto;
-}
-
-/* CONTATO */
-
-.contact{
-padding:80px 40px;
-text-align:center;
-}
-
-input,textarea{
-width:80%;
-max-width:500px;
-padding:12px;
-margin:10px;
-border:none;
-border-radius:6px;
-}
-
-button.send{
-background:#38bdf8;
-padding:12px 30px;
-border:none;
-border-radius:8px;
-cursor:pointer;
+.cta-section h2{
+font-size:32px;
+margin-bottom:20px;
 }
 
 /* FOOTER */
 
 footer{
-background:#020617;
+padding:30px;
 text-align:center;
-padding:20px;
+color:var(--muted);
 font-size:14px;
-color:#94a3b8;
+border-top:1px solid #1f2937;
+}
+
+/* WHATSAPP BUTTON */
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:white;
+padding:14px 16px;
+border-radius:50px;
+font-size:22px;
+text-decoration:none;
+box-shadow:0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* ANIMATION */
+
+.fade{
+opacity:0;
+transform:translateY(20px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
 }
 
 </style>
@@ -170,94 +201,109 @@ color:#94a3b8;
 
 <nav>
 <a href="#">Inicio</a>
-<a href="#services">Serviços</a>
-<a href="#about">Sobre</a>
-<a href="#contact">Contato</a>
+<a href="#features">Soluções</a>
+<a href="#contato">Contato</a>
 </nav>
 </header>
 
 <section class="hero">
 
-<h1>Automação e Tecnologia Inteligente</h1>
+<h1 class="fade">
+Automação inteligente para empresas <span>modernas</span>
+</h1>
 
-<p>
-Soluções em automação, sistemas inteligentes e desenvolvimento
-digital para empresas modernas.
+<p class="fade">
+Criamos sistemas, automações e soluções digitais para aumentar
+a produtividade e reduzir custos.
 </p>
 
-<button onclick="scrollToServices()">Conheça nossos serviços</button>
+<div class="cta fade">
 
-</section>
+<button class="btn primary" onclick="scrollToSection('features')">
+Conhecer soluções
+</button>
 
-<section id="services" class="services">
-
-<h2>Nossos Serviços</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>Automação</h3>
-<p>Sistemas automatizados para empresas e negócios digitais.</p>
-</div>
-
-<div class="card">
-<h3>Desenvolvimento Web</h3>
-<p>Criação de sites e sistemas modernos.</p>
-</div>
-
-<div class="card">
-<h3>Integração de IA</h3>
-<p>Chatbots e automações com inteligência artificial.</p>
-</div>
+<button class="btn secondary" onclick="scrollToSection('contato')">
+Falar conosco
+</button>
 
 </div>
 
 </section>
 
-<section id="about" class="about">
+<section id="features" class="features">
 
-<h2>Sobre nós</h2>
+<h2>Soluções Tecnológicas</h2>
 
-<p>
-A Rocha Robots desenvolve soluções tecnológicas modernas para
-automatizar processos e aumentar a eficiência de empresas.
-</p>
+<div class="grid">
+
+<div class="card fade">
+<h3>Automação de Processos</h3>
+<p>Elimine tarefas repetitivas e aumente eficiência com automação.</p>
+</div>
+
+<div class="card fade">
+<h3>Desenvolvimento de Sistemas</h3>
+<p>Sistemas web e aplicativos personalizados.</p>
+</div>
+
+<div class="card fade">
+<h3>Integração com IA</h3>
+<p>Chatbots inteligentes e assistentes automatizados.</p>
+</div>
+
+<div class="card fade">
+<h3>Soluções SaaS</h3>
+<p>Plataformas online escaláveis para empresas.</p>
+</div>
+
+</div>
 
 </section>
 
-<section id="contact" class="contact">
+<section id="contato" class="cta-section">
 
-<h2>Contato</h2>
+<h2>Pronto para automatizar seu negócio?</h2>
 
-<input placeholder="Seu nome">
-
-<br>
-
-<input placeholder="Seu email">
-
-<br>
-
-<textarea placeholder="Mensagem"></textarea>
-
-<br>
-
-<button class="send">Enviar</button>
+<button class="btn primary">
+Entrar em contato
+</button>
 
 </section>
 
 <footer>
 
-© 2026 Rocha Robots - Todos os direitos reservados
+© 2026 Rocha Robots • Automação e Tecnologia
 
 </footer>
 
+<a class="whatsapp"
+href="https://wa.me/5511999999999"
+target="_blank">
+💬
+</a>
+
 <script>
 
-function scrollToServices(){
-document.getElementById("services").scrollIntoView({
+function scrollToSection(id){
+document.getElementById(id).scrollIntoView({
 behavior:"smooth"
 });
 }
+
+/* SCROLL ANIMATION */
+
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+document.querySelectorAll(".fade").forEach(el=>{
+observer.observe(el);
+});
 
 </script>
 
